@@ -16,7 +16,7 @@ def _get_backend_url() -> str:
     except Exception:
         pass
     # 2. Environment variable (local dev / Render)
-    url = os.environ.get("BACKEND_BASE_URL", "http://localhost:8000").rstrip("/")
+    url = os.environ.get("BACKEND_BASE_URL", "https://ore-twin-project-1.onrender.com").rstrip("/")
     return url
 
 
