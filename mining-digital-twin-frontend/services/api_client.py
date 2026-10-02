@@ -28,7 +28,7 @@ BACKEND_BASE_URL = _get_backend_url()
 def _get(path: str, params: Optional[Dict] = None) -> Any:
     url = f"{BACKEND_BASE_URL}{path}"
     try:
-        r = requests.get(url, params=params, timeout=15)
+        r = requests.get(url, params=params, timeout=60)
         r.raise_for_status()
         return r.json()
     except requests.exceptions.ConnectionError:
