@@ -1,0 +1,127 @@
+﻿[108] ore-beneficiation-digital-twin/
+Γö£ΓöÇΓöÇ mining-digital-twin-frontend/
+Γöé   Γö£ΓöÇΓöÇ app.py
+Γöé   Γö£ΓöÇΓöÇ pages/
+Γöé   Γöé   Γö£ΓöÇΓöÇ 01_Process_Overview.py
+Γöé   Γöé   Γö£ΓöÇΓöÇ 02_3D_Digital_Twin.py
+Γöé   Γöé   Γö£ΓöÇΓöÇ 03_Equipment.py
+Γöé   Γöé   Γö£ΓöÇΓöÇ 04_Streams.py
+Γöé   Γöé   Γö£ΓöÇΓöÇ 05_Simulation.py
+Γöé   Γöé   Γö£ΓöÇΓöÇ 06_Analytics.py
+Γöé   Γöé   Γö£ΓöÇΓöÇ 07_Optimization.py
+Γöé   Γöé   ΓööΓöÇΓöÇ 08_Data_Quality.py
+Γöé   Γö£ΓöÇΓöÇ components/
+Γöé   Γö£ΓöÇΓöÇ threejs/
+Γöé   Γö£ΓöÇΓöÇ services/api_client.py
+Γöé   Γö£ΓöÇΓöÇ models/
+Γöé   Γö£ΓöÇΓöÇ assets/
+Γöé   Γö£ΓöÇΓöÇ requirements.txt
+Γöé   Γö£ΓöÇΓöÇ .env.example
+Γöé   ΓööΓöÇΓöÇ README.md
+Γöé
+ΓööΓöÇΓöÇ mining-digital-twin-backend/
+    Γö£ΓöÇΓöÇ app/
+    Γöé   Γö£ΓöÇΓöÇ main.py
+    Γöé   Γö£ΓöÇΓöÇ api/routes/
+    Γöé   Γö£ΓöÇΓöÇ core/
+    Γöé   Γö£ΓöÇΓöÇ models/
+    Γöé   Γö£ΓöÇΓöÇ schemas/
+    Γöé   Γö£ΓöÇΓöÇ services/
+    Γöé   Γöé   Γö£ΓöÇΓöÇ simulation/
+    Γöé   Γöé   Γö£ΓöÇΓöÇ mass_balance/
+    Γöé   Γöé   Γö£ΓöÇΓöÇ optimization/
+    Γöé   Γöé   ΓööΓöÇΓöÇ data_quality/
+    Γöé   Γö£ΓöÇΓöÇ repositories/
+    Γöé   ΓööΓöÇΓöÇ mock/
+    Γö£ΓöÇΓöÇ tests/
+    Γö£ΓöÇΓöÇ requirements.txt
+    Γö£ΓöÇΓöÇ .env.example
+    Γö£ΓöÇΓöÇ render.yaml
+    Γö£ΓöÇΓöÇ start.sh
+    ΓööΓöÇΓöÇ README.md
+
+[109] 14. Deployment Requirements
+[110] Create two separate GitHub repositories.
+[111] Deploy backend first to Render.
+[112] Backend start command: uvicorn app.main:app --host 0.0.0.0 --port $PORT.
+[113] Backend health path: /health.
+[114] Backend must expose CORS configuration using ALLOWED_ORIGINS.
+[115] Frontend must read BACKEND_BASE_URL from .env during local development or Streamlit secrets/environment during deployment.
+[116] Frontend must never contain backend business logic.
+[117] Provide requirements.txt, .env.example, README.md, render.yaml, and start.sh as applicable.
+[118] Test backend /health before connecting the frontend.
+[119] After deployment, configure frontend with the public HTTPS backend URL.
+[120] 15. Environment Variables
+[121] 16. Antigravity Master Prompt
+[122] Act as a senior mineral-processing digital-twin architect, process engineer, Python/FastAPI architect, Streamlit/Three.js developer, data engineer, and DevOps engineer.
+[123] Build the complete Ore Beneficiation Plant Digital Twin described in this document.
+[124] PRIMARY REQUIREMENT:
+[125] Convert the supplied 'Typical flow-sheet of ore beneficiation plant' image into an interactive digital process twin. Preserve the process topology and named units/streams shown in the image. Do not replace it with a generic mining dashboard.
+[126] PROCESS TO REPRESENT:
+[127] ROM Ore ΓåÆ Primary Crusher ΓåÆ Screen ΓåÆ Secondary Crusher ΓåÆ Rotary Scrubber + Water ΓåÆ Ore Lumps ΓåÆ Jig/Concentration.
+[128] Represent the classifier/hydrocyclone/spiral circuit, wet high-intensity magnetic separator, pellet/tailings route, tertiary crusher + screen route, additional jig, shaking water table, and final Ore Fines/Concentrate/Middlings/Reject/Tailings streams and water connections shown in the source image.
+[129] SOFTWARE ARCHITECTURE:
+[130] Repository 1: mining-digital-twin-frontend
+[131] - Streamlit
+[132] - Plotly
+[133] - HTML/CSS/JavaScript
+[134] - Three.js
+[135] - Environment-configured BACKEND_BASE_URL
+[136] - No backend business logic
+[137] Repository 2: mining-digital-twin-backend
+[138] - FastAPI
+[139] - Pydantic
+[140] - Python scientific stack
+[141] - Modular simulation, mass-balance, optimization, diagnostics, data-quality services
+[142] - Render deployment
+[143] - HTTPS REST APIs
+[144] - CORS
+[145] - /health endpoint
+[146] DIGITAL-TWIN DATA RULE:
+[147] There must be one canonical process state. Equipment, streams, 2D flowsheet, Three.js visualization, charts, KPIs and simulation results must use the same IDs and values from the backend. Do not generate independent random values in the frontend.
+[148] DEMO DATA RULE:
+[149] Because the supplied flowsheet contains topology but not validated plant operating numbers, use deterministic configurable simulation/mock data. Clearly label it DEMO/SIMULATION. Do not present invented values as real plant values. Keep the repository/data layer ready for future historian/PLC/SCADA/OPC-UA integration.
+[150] UI:
+[151] Create process overview, interactive 2D flowsheet, 3D digital twin, equipment details, streams, simulation, analytics, optimization/advisory, and data-quality pages.
+[152] SIMULATION:
+[153] Implement deterministic stream propagation, material/water balance, equipment-level transformations, product/reject/tailing tracking, scenario execution, timestamps and reproducible snapshots. Include validation warnings for missing or inconsistent data.
+[154] API:
+[155] Implement /health, /api/v1/plant/overview, /api/v1/equipment, /api/v1/equipment/{id}, /api/v1/streams, /api/v1/streams/{id}, /api/v1/simulation/state, /api/v1/simulation/run, /api/v1/analytics/mass-balance, /api/v1/analytics/trends, /api/v1/optimization/run, and /api/v1/data-quality.
+[156] DEPLOYMENT:
+[157] Generate complete files, not pseudocode:
+[158] - frontend requirements.txt, .env.example, README.md
+[159] - backend requirements.txt, .env.example, render.yaml, start.sh, README.md
+[160] - tests and deterministic mock data
+[161] - deployment and troubleshooting instructions
+[162] BACKEND START COMMAND:
+[163] uvicorn app.main:app --host 0.0.0.0 --port $PORT
+[164] HEALTH:
+[165] GET /health must return a simple successful status.
+[166] QUALITY:
+[167] Use clean modular code, typed schemas, stable IDs, error handling, API validation, CORS configuration, logging, unit-aware fields, tests, and reproducible demo data. Avoid TODOs and incomplete files. Explain assumptions where the source does not provide engineering parameters.
+[168] OUTPUT:
+[169] Generate two complete repository folders plus one deployment guide. Make them ready for GitHub upload and Render deployment. The implementation must be a real starting codebase, not only an architecture diagram.
+[170] 17. Verification Checklist
+[171] ΓÿÉ The supplied flowsheet topology is visible in the digital twin.
+[172] ΓÿÉ Every major equipment block has a stable equipment ID.
+[173] ΓÿÉ Every material/water connection has a stable stream ID.
+[174] ΓÿÉ The 2D process view and 3D view show the same process state.
+[175] ΓÿÉ Frontend loads without broken imports.
+[176] ΓÿÉ Backend starts successfully on Render.
+[177] ΓÿÉ /health returns status OK.
+[178] ΓÿÉ Frontend successfully calls the backend overview endpoint.
+[179] ΓÿÉ Simulation produces deterministic results in DEMO mode.
+[180] ΓÿÉ Mass-balance checks are displayed.
+[181] ΓÿÉ Mock data remains consistent across screens.
+[182] ΓÿÉ CORS is correctly configured.
+[183] ΓÿÉ Environment variables are documented.
+[184] ΓÿÉ Simulation and optimization sample calls succeed.
+[185] ΓÿÉ API schema mismatch errors are handled and documented.
+[186] ΓÿÉ Render cold-start/timeout behavior is documented.
+[187] ΓÿÉ The README explains local setup, GitHub push, Render deployment, frontend configuration, and troubleshooting.
+[188] 18. Important Engineering Boundary
+[189] This first digital twin is a software/simulation representation of the supplied flowsheet. It is not, by itself, a validated process-control system. Before any live plant control or operational recommendation is used, real plant historian/PLC/SCADA data, engineering constraints, equipment limits, instrument validation, process-model calibration, cybersecurity requirements, and domain-expert approval must be incorporated.
+[190] 19. Source Deployment Guide Alignment
+[191] The software deployment portion of this specification follows the supplied deployment guide: two repositories, Streamlit frontend, FastAPI backend, Render backend deployment, HTTPS REST connectivity, environment-configured backend URL, CORS, health check, deployment artifacts, verification checklist, and troubleshooting coverage. εêÇfileciteεêéturn0file0εêéL5-L22εêü
+[192] The guide specifically requires backend Render configuration including uvicorn, /health, environment variables, requirements.txt, render.yaml and start.sh, and a sequence of deploying the backend before configuring the frontend with its public URL. εêÇfileciteεêéturn0file0εêéL47-L67εêü
+[193] It also requires standardized environment variables and verification of frontend/backend connectivity, mock mode, CORS, simulation/optimization calls, and troubleshooting for deployment/API issues. εêÇfileciteεêéturn0file0εêéL71-L104εêü

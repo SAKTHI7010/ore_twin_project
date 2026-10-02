@@ -1,0 +1,27 @@
+﻿=== TABLE 0 ===
+Endpoint | Method | Purpose
+/health | GET | Backend health and version.
+/api/v1/plant/overview | GET | Current plant status and key KPIs.
+/api/v1/equipment | GET | List all equipment and current states.
+/api/v1/equipment/{equipment_id} | GET | Detailed equipment state.
+/api/v1/streams | GET | List current process streams.
+/api/v1/streams/{stream_id} | GET | Detailed stream state and history reference.
+/api/v1/simulation/state | GET | Current simulation state.
+/api/v1/simulation/run | POST | Run a simulation step/scenario.
+/api/v1/analytics/mass-balance | GET | Mass-balance results and deviations.
+/api/v1/analytics/trends | GET | Historical/simulated trends.
+/api/v1/optimization/run | POST | Run configurable scenario optimization/advisory.
+/api/v1/data-quality | GET | Data-quality and source status.
+
+=== TABLE 1 ===
+Repository | Variable | Purpose
+Frontend | BACKEND_BASE_URL | FastAPI public base URL.
+Frontend | APP_ENV | development/demo/production.
+Frontend | MOCK_MODE | Enable local/demo fallback.
+Backend | APP_ENV | Backend runtime environment.
+Backend | LOG_LEVEL | Logging level.
+Backend | ALLOWED_ORIGINS | CORS allowed origins.
+Backend | MODEL_VERSION | Simulation/model version.
+Backend | DEMO_MODE | Enable deterministic demo data.
+Backend | DATA_SOURCE_URL / historian placeholders | Future live data source integration.
+
