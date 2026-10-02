@@ -16,3 +16,5 @@ services:
         value: "1.0.0"
       - key: ALLOWED_ORIGINS
         value: "https://your-frontend.streamlit.app"
+      - key: PYTHON_VERSION
+        value: "3.11.9"
